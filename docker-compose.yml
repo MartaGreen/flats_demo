@@ -39,6 +39,20 @@ services:
       - "8000:8000"
     restart: always
 
+  client:
+    build:
+      dockerfile: Dockerfile
+      context: "./client"
+    depends_on:
+      - server
+    volumes:
+      - /app/node_modules
+      - ./client:/app
+    ports:
+      - "3000:3000"
+    restart: always
+
 volumes:
   db:
   server:
+  client:
