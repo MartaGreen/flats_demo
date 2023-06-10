@@ -1,10 +1,17 @@
 const { client } = require("./index.js");
 
-const getFlats = async () => {
-  const res = await client.query("SELECT * FROM flats");
-  console.log("test");
-  console.log(res);
-  return res;
+const getFlats = async (page) => {
+  const LIMIT = 25;
+  const OFFSET = LIMIT * (page - 1);
+
+  const query = `
+    SELECT * FROM flats
+    LIMIT ${LIMIT}
+    OFFSET ${OFFSET}
+  `;
+
+  const res = await client.query(query);
+  return res.rows;
 };
 
 module.exports = { getFlats };
