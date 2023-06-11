@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Flat } from "./Flat";
 import { Loading } from "./Loading";
+import { Error } from "./Error";
 import { Box } from "@mui/material";
 import { getFlats } from "@utils/flats";
 import { FlatT } from "src/models/flats";
@@ -25,8 +26,9 @@ export const Flats = ({ page, endLoading, loading }: FlatsProps) => {
   }, [page]);
 
   return (
-    <Box sx={{ minHeight: "100vh" }}>
+    <>
       {(loading && <Loading />) ||
+        (!flats && <Error />) ||
         (flats && (
           <Box
             sx={{
@@ -36,6 +38,7 @@ export const Flats = ({ page, endLoading, loading }: FlatsProps) => {
               maxWidth: "90%",
               margin: "50px auto",
               minWidth: "300px",
+              minHeight: "100vh",
             }}
           >
             {flats?.map((flat) => (
@@ -43,6 +46,6 @@ export const Flats = ({ page, endLoading, loading }: FlatsProps) => {
             ))}
           </Box>
         ))}
-    </Box>
+    </>
   );
 };
