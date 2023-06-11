@@ -4,7 +4,6 @@ import axios from "axios";
 export const getPagesAmount = async (): Promise<null | number> => {
   try {
     const res = await axios.get(`http://localhost:8000/pages`);
-    console.log("res", res);
     const amount: number = res.data;
     return amount;
   } catch (err) {
