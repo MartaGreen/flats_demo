@@ -21,5 +21,6 @@ export const getFlats = async (page: number): Promise<FlatT[] | null> => {
   } catch (err) {
     console.log("Error occured while getting flats", err);
   }
+
   return null;
 };

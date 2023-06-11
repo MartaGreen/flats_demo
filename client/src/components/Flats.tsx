@@ -25,7 +25,7 @@ export const Flats = ({ page, endLoading, loading }: FlatsProps) => {
   }, [page]);
 
   return (
-    <>
+    <Box sx={{ minHeight: "100vh" }}>
       {(loading && <Loading />) ||
         (flats && (
           <Box
@@ -36,7 +36,6 @@ export const Flats = ({ page, endLoading, loading }: FlatsProps) => {
               maxWidth: "90%",
               margin: "50px auto",
               minWidth: "300px",
-              minHeight: "100vh",
             }}
           >
             {flats?.map((flat) => (
@@ -44,6 +43,6 @@ export const Flats = ({ page, endLoading, loading }: FlatsProps) => {
             ))}
           </Box>
         ))}
-    </>
+    </Box>
   );
 };
