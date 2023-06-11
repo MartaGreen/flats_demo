@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { getFlats } from "../utils";
-import { FlatT } from "../types";
 import { Flat } from "./Flat";
 import { Box } from "@mui/material";
+import { getFlats } from "@utils/flats";
+import { FlatT } from "src/models/flats";
 
 export const Flats = ({ page }: { page: number }) => {
   const [flats, setFlats] = useState<null | FlatT[]>(null);
@@ -12,9 +12,6 @@ export const Flats = ({ page }: { page: number }) => {
     setFlats(flats);
   };
 
-  useEffect(() => {
-    loadFlats();
-  }, []);
   useEffect(() => {
     loadFlats();
   }, [page]);

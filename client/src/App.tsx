@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Flats } from "./components";
+import { Flats } from "@components/Flats";
 import { Pagination } from "@mui/material";
-import { getPagesAmount } from "./utils";
+import { getPagesAmount } from "@utils/flats";
 
 function App() {
   const [page, setPage] = useState<number>(1);

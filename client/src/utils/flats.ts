@@ -1,4 +1,4 @@
-import { FlatT } from "../types";
+import { FlatT } from "@models/flats";
 import axios from "axios";
 
 export const getPagesAmount = async (): Promise<null | number> => {

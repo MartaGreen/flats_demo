@@ -1,5 +1,5 @@
 import { Stack, Typography } from "@mui/material";
-import { FlatT } from "../types";
+import { FlatT } from "@models/flats";
 
 export const Flat = ({ name, address, image_url }: FlatT) => {
   return (
