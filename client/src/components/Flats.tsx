@@ -4,14 +4,20 @@ import { FlatT } from "../types";
 import { Flat } from "./Flat";
 import { Box } from "@mui/material";
 
-export const Flats = () => {
+export const Flats = ({ page }: { page: number }) => {
   const [flats, setFlats] = useState<null | FlatT[]>(null);
 
+  const loadFlats = async () => {
+    const flats: FlatT[] | null = await getFlats(page);
+    setFlats(flats);
+  };
+
   useEffect(() => {
-    getFlats(1).then((flats: FlatT[] | null) => {
-      setFlats(flats);
-    });
+    loadFlats();
   }, []);
+  useEffect(() => {
+    loadFlats();
+  }, [page]);
 
   return (
     <Box

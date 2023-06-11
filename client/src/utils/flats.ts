@@ -3,6 +3,7 @@ import axios from "axios";
 
 export const getFlats = async (page: number): Promise<FlatT[] | null> => {
   try {
+    console.log("try to get flats");
     const res = await axios.get(`http://localhost:8000/?page=${page}`);
     const flats: FlatT[] = res.data;
     return flats;
