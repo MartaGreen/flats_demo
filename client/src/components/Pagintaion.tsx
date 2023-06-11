@@ -1,5 +1,9 @@
 import { ChangeEvent, useEffect, useState } from "react";
-import { Pagination as MuiPagination, Stack } from "@mui/material";
+import {
+  Pagination as MuiPagination,
+  PaginationItem,
+  Stack,
+} from "@mui/material";
 import { getPagesAmount } from "@utils/flats";
 
 type PaginationProps = {
@@ -36,6 +40,15 @@ export const Pagination = ({ page, changePage }: PaginationProps) => {
         onChange={changePage}
         shape="rounded"
         variant="outlined"
+        renderItem={(item) => (
+          <PaginationItem
+            sx={{
+              bgcolor: "#fff",
+              "&.Mui-selected": { bgcolor: "#e5e5e5" },
+            }}
+            {...item}
+          />
+        )}
       />
     </Stack>
   );

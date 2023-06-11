@@ -1,4 +1,5 @@
 import { Stack, Typography } from "@mui/material";
+import PlaceIcon from "@mui/icons-material/Place";
 import { FlatT } from "@models/flats";
 
 export const Flat = ({ name, address, image_url }: FlatT) => {
@@ -34,8 +35,17 @@ export const Flat = ({ name, address, image_url }: FlatT) => {
           {name}
         </Typography>
         <Typography
-          sx={{ fontSize: "14px", color: "#626262", textAlign: "left" }}
+          sx={{
+            fontSize: "14px",
+            color: "#626262",
+            textAlign: "left",
+            display: "flex",
+            alignItems: "flex-start",
+            justifyContent: "flex-start",
+            gap: "2px",
+          }}
         >
+          <PlaceIcon fontSize="small" sx={{ color: "#626262" }} />
           {address}
         </Typography>
       </Stack>
