@@ -6,7 +6,7 @@ const getPageAmount = async () => {
   const res = await client.query(query);
   const rows = res.rows[0].count;
   const pagesAmount = Math.ceil(rows / PAGE_FLATS_LIMIT);
-  console.log(pagesAmount);
+  return pagesAmount;
 };
 
 const getFlats = async (page) => {

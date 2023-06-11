@@ -1,3 +1,3 @@
-import { getFlats } from "./flats";
+import { getFlats, getPagesAmount } from "./flats";
 
-export { getFlats };
+export { getFlats, getPagesAmount };
