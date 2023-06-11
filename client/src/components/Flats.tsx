@@ -24,6 +24,7 @@ export const Flats = ({ page }: { page: number }) => {
         gridGap: "40px",
         maxWidth: "90%",
         margin: "50px auto",
+        minWidth: "300px",
       }}
     >
       {flats?.map((flat) => (

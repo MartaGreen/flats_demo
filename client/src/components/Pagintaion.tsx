@@ -3,6 +3,8 @@ import {
   Pagination as MuiPagination,
   PaginationItem,
   Stack,
+  useTheme,
+  useMediaQuery,
 } from "@mui/material";
 import { getPagesAmount } from "@utils/flats";
 
@@ -19,6 +21,9 @@ export const Pagination = ({ page, changePage }: PaginationProps) => {
       setPagesAmount(amount);
     });
   }, []);
+
+  const { breakpoints } = useTheme();
+  const mobile = useMediaQuery(breakpoints.down("sm"));
 
   return (
     <Stack
@@ -40,6 +45,7 @@ export const Pagination = ({ page, changePage }: PaginationProps) => {
         onChange={changePage}
         shape="rounded"
         variant="outlined"
+        size={mobile ? "small" : "medium"}
         renderItem={(item) => (
           <PaginationItem
             sx={{

@@ -14,6 +14,7 @@ function App() {
     <Stack
       sx={{
         bgcolor: "#eaeaea",
+        minWidth: "320px",
       }}
     >
       <Flats page={page} />
