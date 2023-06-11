@@ -13,7 +13,7 @@ function App() {
   return (
     <Stack
       sx={{
-        backgroundImage: "linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%)",
+        bgcolor: "#eaeaea",
       }}
     >
       <Flats page={page} />

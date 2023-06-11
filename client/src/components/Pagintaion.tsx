@@ -22,8 +22,8 @@ export const Pagination = ({ page, changePage }: PaginationProps) => {
         position: "sticky",
         bottom: 0,
         width: "100%",
-        height: "100px",
-        bgcolor: "#fff",
+        height: "70px",
+        bgcolor: "#f5f5f5",
         alignItems: "center",
         justifyContent: "center",
         boxShadow:

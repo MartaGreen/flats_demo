@@ -51,6 +51,9 @@ services:
     ports:
       - "3000:3000"
     restart: always
+    environment:
+      - WATCHPACK_POLLING=true
+      - CHOKIDAR_USEPOLLING=true
 
 volumes:
   db:
