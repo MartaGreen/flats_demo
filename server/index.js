@@ -1,4 +1,4 @@
-const { getFlats } = require("./db/flats");
+const { getFlats, getPageAmount } = require("./db/flats");
 
 const express = require("express");
 const cors = require("cors");
@@ -8,6 +8,7 @@ const port = 8000;
 
 app.get("/", async (req, res) => {
   const page = req.query.page ?? 1;
+  const pageAmount = await getPageAmount();
   const flats = await getFlats(page);
 
   res.json(flats);
