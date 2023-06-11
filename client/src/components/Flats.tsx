@@ -21,7 +21,7 @@ export const Flats = ({ page }: { page: number }) => {
       sx={{
         display: "grid",
         gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-        gridGap: "30px",
+        gridGap: "50px",
         maxWidth: "90%",
         margin: "50px auto",
       }}

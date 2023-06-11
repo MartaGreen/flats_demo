@@ -1,31 +1,24 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { Flats } from "@components/Flats";
-import { Pagination } from "@mui/material";
-import { getPagesAmount } from "@utils/flats";
+import { Pagination } from "@components/Pagintaion";
+import { Stack } from "@mui/material";
 
 function App() {
   const [page, setPage] = useState<number>(1);
-  const [pagesAmount, setPagesAmount] = useState<number | null>(null);
 
   const onChangePage = (e: any, p: number) => {
     setPage(p);
   };
 
-  useEffect(() => {
-    getPagesAmount().then((amount: number | null) => {
-      setPagesAmount(amount);
-    });
-  }, []);
-
   return (
-    <div>
-      {pagesAmount && (
-        <>
-          <Flats page={page} />
-          <Pagination page={page} count={pagesAmount} onChange={onChangePage} />
-        </>
-      )}
-    </div>
+    <Stack
+      sx={{
+        backgroundImage: "linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%)",
+      }}
+    >
+      <Flats page={page} />
+      <Pagination page={page} changePage={onChangePage} />
+    </Stack>
   );
 }
 
