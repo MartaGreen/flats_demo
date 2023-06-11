@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { getFlats } from "../utils";
 import { FlatT } from "../types";
+import { Flat } from "./Flat";
+import { Box } from "@mui/material";
 
 export const Flats = () => {
   const [flats, setFlats] = useState<null | FlatT[]>(null);
@@ -12,14 +14,18 @@ export const Flats = () => {
   }, []);
 
   return (
-    <div>
+    <Box
+      sx={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+        gridGap: "30px",
+        maxWidth: "90%",
+        margin: "50px auto",
+      }}
+    >
       {flats?.map((flat) => (
-        <div>
-          <h4>
-            {flat.name} {flat.address}
-          </h4>
-        </div>
+        <Flat {...flat} key={flat.image_url} />
       ))}
-    </div>
+    </Box>
   );
 };

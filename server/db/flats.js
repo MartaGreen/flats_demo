@@ -1,7 +1,7 @@
 const { client } = require("./index.js");
 
 const getFlats = async (page) => {
-  const LIMIT = 25;
+  const LIMIT = 12;
   const OFFSET = LIMIT * (page - 1);
 
   const query = `

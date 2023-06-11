@@ -9,7 +9,6 @@ const port = 8000;
 app.get("/", async (req, res) => {
   const page = req.query.page ?? 1;
   const flats = await getFlats(page);
-  console.log("got flats", flats);
 
   res.json(flats);
 });
